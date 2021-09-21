@@ -1,0 +1,19 @@
+https://mediaqueri.es/efo/
+https://mediaqueri.es/crr/
+https://blog.prototypr.io/atomic-design-dise%C3%B1o-at%C3%B3mico-113411bc7816
+
+https://www.tilde.io
+
+https://www.screenshotmachine.com/ (El mejor, captura responsive)
+https://css-tricks.com/full-page-screenshots-browsers/
+https://snapx.io/
+https://web-capture.net/
+
+Contenedor que mantiene la proporcion de aspecto
+
+https://css-tricks.com/aspect-ratio-boxes/
+https://ratiobuddy.com/
+
+https://css-tricks.com/optimizing-large-scale-displays/
+http://screensiz.es/
+https://responsiveimages.org/

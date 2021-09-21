@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        #flecha{
+            position: fixed;
+            right:10px;
+            bottom: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+    <script>
+        var boton, lista;
+        window.onload = ()=>{
+            boton = document.getElementById("boton_menu");
+            lista = document.getElementById("lista_menu");
+            boton.addEventListener("click",()=>{
+                lista.classList.toggle("ocultar");
+                lista.classList.add("animated","fadeIn");
+                boton.innerHTML = boton.innerHTML=="v Menú"?"^ Menú":"v Menú";
+            });
+        }
+
+        /*http://www.javascriptkit.com/javatutors/detect-user-scroll-amount.shtml*/
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            )
+        }
+
+        function amountscrolled(){
+            var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+            var docheight = getDocHeight()
+            var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+            var trackLength = docheight - winheight
+            var pctScrolled = Math.floor(scrollTop/trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+            console.log(pctScrolled + '% scrolled')
+            if(pctScrolled<10)
+            {
+                flecha.classList.add("ocultar_flecha");
+            }
+            else{
+                flecha.classList.remove("ocultar_flecha");
+            }
+            
+        }
+        
+        window.addEventListener("scroll", function(){
+            amountscrolled()
+        }, false)
+
+    </script>    
+</head>
+<body>
+   <div id="flecha" class="ocultar_flecha">
+      <a href="#menu"><img src="img/noun_up_849687.svg" alt=""></a>
+   </div> 
+   <nav id="menu">
+       <!-- Menú de navegación , funciona similar a un div -->
+       <div id="controles_menu">
+           <img src="img/logo_480.png" alt="">
+           <button id="boton_menu">v Menú</button>
+       </div>
+       <ul id="lista_menu" class="ocultar">
+           <li><img src="img/logo_768.png" alt=""></li>
+           <li><a href="#cabezote">Inicio</a></li>
+           <li><a href="#servicios">Servicios</a></li>
+           <li><a href="#formulario">Formulario</a></li>
+           <li><a href="#pata">Contacto</a></li>
+       </ul>
+   </nav>
+   <section id="cabezote">
+    <div>
+        <h2 class="titulo_seccion">Título</h2>
+        <p id="entradilla_cabezote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </p>
+    </div>
+    <div id="principal_cabezote">
+        <img id="imagen_cabezote" src="img/imagen_home.jpg" alt="">
+        <div id="descripcion_cabezote">
+            <p class="parrafo_seccion descripcion_cabezote">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse aperiam maxime obcaecati ipsam veritatis reiciendis rerum, recusandae magnam quia amet expedita necessitatibus, consequuntur similique incidunt est. Maxime at est fugit!
+            </p>
+        
+            <p class="parrafo_breve">
+                Lorem ipsum, dolor sit amet consectetur adipisicing. 
+            </p>
+            <div id="contenedor_iconos_cabezote">
+                <img class="imagen_svg" src="img/noun_Car_1566240.svg" alt="">
+                <img class="imagen_svg" src="img/noun_cellphone_1995560.svg" alt="">
+                <img class="imagen_svg" src="img/noun_credit cards_942014.svg" alt="">
+                <img class="imagen_svg" src="img/noun_Food_2250322.svg" alt="">
+                <img class="imagen_svg" src="img/noun_tools_2064324.svg" alt="">
+            </div>
+        </div>
+    </div>
+   </section>
+   <section id="servicios">
+        <h2 class="titulo_seccion">Título</h2>
+        <div class="contenedor_servicio">
+            <img src="img/imagen_gente_01.jpg" alt="">
+            <div>
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p class="parrafo_seccion parrafo_tablet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam odit excepturi incidunt et ipsam aliquid quis mollitia nobis repellat illo magni dicta, fugiat ipsum fuga accusamus. Nulla, voluptate eius.</p>
+                <button class="boton_servicios">Enlace</button>
+            </div>
+        </div>
+        <div class="contenedor_servicio">
+            <img src="img/imagen_gente_02.jpg" alt="">
+            <div>
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p class="parrafo_seccion parrafo_tablet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam odit excepturi incidunt et ipsam aliquid quis mollitia nobis repellat illo magni dicta, fugiat ipsum fuga accusamus. Nulla, voluptate eius.</p>
+                <button class="boton_servicios">Enlace</button>
+            </div>
+        </div>
+        <div class="contenedor_servicio">
+            <img src="img/imagen_gente_03.jpg" alt="">
+            <div>
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p class="parrafo_seccion parrafo_tablet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam odit excepturi incidunt et ipsam aliquid quis mollitia nobis repellat illo magni dicta, fugiat ipsum fuga accusamus. Nulla, voluptate eius.</p>
+                <button class="boton_servicios">Enlace</button>
+            </div>
+        </div>
+
+        <div id="call_to_action_servicios">
+            <p class="parrafo_breve">Lorem ipsum dolor sit amet consectetur, adipisicing.</p>
+            <button class="boton_servicios">Call to action</button>
+        </div>
+
+   </section>
+   <section id="formulario">
+       <h2 class="titulo_seccion">Formulario</h2>
+        <div>
+            <!-- MailerLite Universal -->
+            <script>
+            (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+            var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+            f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+            var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+            _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+            
+            var ml_account = ml('accounts', '2022654', 'y2x2r3v6s5', 'load');
+            </script>
+            <!-- End MailerLite Universal -->
+            <div class="ml-form-embed"
+            data-account="2022654:y2x2r3v6s5"
+            data-form="2013948:n3d6y9">
+            </div>
+        </div>
+    </section>
+   <footer id="pata">
+        <a id="item1_pata" class="item_pata" href="">Item 1</a>
+        <a class="item_pata" href="">Item 2</a>
+        <a class="item_pata" href="">Item 3</a>
+        <a class="item_pata" href="">Item 4</a>
+        <a class="item_pata" href="">Item 5</a>
+        <a class="item_pata" href="">Item 6</a>
+        <div id="derechos_reservados_pata">
+            <span>Derechos reservados 2020 -</span>
+            <a href="mailto:contacto@prueba.com">contacto@prueba.com</a>
+        </div>
+   </footer>
+</body>
+</html>
